@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  { title: 'Proyecto principal', description: 'Describe aquí el problema, tu aporte y el resultado conseguido.', tags: ['Astro', 'Tailwind'] },
+  { title: 'Otro proyecto', description: 'Una segunda pieza de trabajo para mostrar variedad y criterio.', tags: ['Diseño', 'Frontend'] },
+];
+---
+
+<BaseLayout title="Tu Nombre · Portafolio" description="Portafolio personal, proyectos y experimentos.">
+  <section id="inicio" class="mx-auto max-w-6xl px-6 pb-20 pt-24 sm:pt-32">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">Diseñador · Desarrollador</p>
+    <h1 class="mt-5 max-w-4xl text-5xl font-bold tracking-tight sm:text-7xl">Construyo ideas que se sienten simples.</h1>
+    <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">Un portafolio vivo de proyectos, experimentos y aprendizajes. Reemplaza este texto con tu propuesta personal.</p>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href="#proyectos" class="rounded-full bg-cyan-400 px-5 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300">Ver proyectos</a>
+      <a href="#contacto" class="rounded-full border border-white/15 px-5 py-3 font-semibold text-slate-200 transition hover:border-white/40">Contactarme</a>
+    </div>
+  </section>
+
+  <section id="proyectos" class="mx-auto max-w-6xl scroll-mt-8 px-6 pb-24">
+    <div class="mb-7 flex items-end justify-between gap-4"><h2 class="text-2xl font-semibold">Proyectos destacados</h2><span class="text-sm text-slate-500">Trabajo seleccionado</span></div>
+    <div class="grid gap-5 md:grid-cols-2">{projects.map((project) => <ProjectCard {...project} />)}</div>
+  </section>
+
+  <section id="sobre-mi" class="mx-auto max-w-3xl scroll-mt-8 px-6 pb-24">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">Sobre mí</p>
+    <h2 class="mt-4 text-4xl font-bold tracking-tight">Diseño y desarrollo experiencias digitales.</h2>
+    <p class="mt-6 text-lg leading-8 text-slate-400">Escribe acá una presentación breve: quién eres, qué haces y qué tipo de problemas te gusta resolver.</p>
+  </section>
+
+  <section id="contacto" class="mx-auto max-w-6xl scroll-mt-8 px-6 pb-28">
+    <div class="rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-8 sm:p-12"><p class="text-sm uppercase tracking-[0.3em] text-cyan-300">¿Trabajamos juntos?</p><h2 class="mt-4 text-4xl font-bold tracking-tight">Contame qué estás construyendo.</h2><a class="mt-7 inline-block font-semibold text-cyan-300 hover:text-white" href="mailto:hola@ejemplo.com">hola@ejemplo.com →</a></div>
+  </section>
+</BaseLayout>
