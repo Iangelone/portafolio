@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ink-950: #111111;
+  --color-ink-925: #101010;
+  --color-ink-900: #121212;
+  --color-ink-850: #161616;
+  --color-ink-800: #191919;
+  --color-ink-750: #1A1A1A;
+  --color-ink-700: #1C1C1C;
+  --color-ink-650: #1E1E1E;
+  --color-ink-600: #202020;
+  --color-ink-500: #2B2B2B;
+  --color-ink-400: #2C2C2C;
+  --color-ink-300: #2F2F2F;
+  --color-accent-brown-dark: #1F150C;
+  --color-accent-brown: #412D15;
+  --color-accent-cream: #E1DCC9;
+}
+
+:root {
+  color-scheme: dark;
+  background: #111111;
+}

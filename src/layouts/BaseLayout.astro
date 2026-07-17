@@ -17,16 +17,7 @@ const { title = 'Portafolio', description = 'Portafolio personal y proyectos sel
     <link rel="icon" href="/favicon.ico" />
     <title>{title}</title>
   </head>
-  <body class="bg-slate-950 text-slate-100 antialiased">
-    <header class="border-b border-white/10">
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5" aria-label="Navegación principal">
-        <a href="#inicio" class="font-semibold tracking-tight">Tu Nombre<span class="text-cyan-400">.</span></a>
-        <div class="flex gap-5 text-sm text-slate-300">
-          <a class="transition hover:text-white" href="#proyectos">Proyectos</a>
-          <a class="transition hover:text-white" href="#sobre-mi">Sobre mí</a>
-        </div>
-      </nav>
-    </header>
+  <body class="bg-ink-950 text-slate-100 antialiased">
     <main><slot /></main>
     <footer class="mx-auto max-w-6xl px-6 py-12 text-sm text-slate-500">© {new Date().getFullYear()} Tu Nombre.</footer>
   </body>
