@@ -1,72 +1,101 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 
 const projects = [
   {
-    title: 'CodeClubIDE',
-    description: 'IDE offline-first construido desde cero: editor, terminal, debugger y tres modos —Coding, Studio y Design— con agentes de IA, memoria persistente y RAG local.',
-    tags: ['Electron', 'React', 'Rust', 'WASM', 'IA'],
-  },
-  {
-    title: 'TurnoCore',
-    description: 'SaaS multi-tenant de gestión de turnos con booking público, dashboard privado y marketplace de pagos con Mercado Pago.',
-    tags: ['Next.js', 'Supabase', 'Prisma', 'Mercado Pago'],
-    image: '/images/projects/turnocore.png',
-  },
-  {
-    title: 'Socios del Negocio',
-    description: 'Plataforma de marketing digital y cursos con landing pages de alta conversión, pagos con Stripe, CRM y experimentos A/B en Edge Middleware.',
-    tags: ['Next.js', 'Stripe', 'GHL', 'GSAP'],
-    image: '/images/projects/socios-webinar.png',
-  },
-  {
-    title: 'Bewell Esthetic Miami',
-    description: 'Sitio premium bilingüe para una clínica estética, con booking online, captación automatizada de leads y una experiencia de marca animada.',
-    tags: ['Next.js', 'i18n', 'Calendly', 'GoHighLevel'],
-  },
-  {
     title: 'Concierge',
+    source: 'Proyecto personal',
     description: 'SaaS de asistencia comercial con IA que genera cotizaciones, gestiona clientes y coordina cuatro sub-agentes especializados en tiempo real.',
     tags: ['AI SDK', 'Supabase', 'RAG', 'DDD'],
     image: '/images/projects/concierge.png',
   },
   {
-    title: 'UI Scanner Rust',
-    description: 'Scanner de escritorio que combina UIAutomation, Win32 y GDI para convertir ventanas de Windows en HTML semántico y controlarlas con un agente IA.',
-    tags: ['Rust', 'Win32', 'UIAutomation', 'OpenAI'],
+    title: 'Socios del Negocio',
+    source: 'Matecore',
+    description: 'Plataforma de marketing digital y cursos con landing pages de alta conversión, pagos con Stripe, CRM y experimentos A/B en Edge Middleware.',
+    tags: ['Next.js', 'Stripe', 'GHL', 'GSAP'],
+    image: '/images/projects/socios-webinar.png',
+  },
+  {
+    title: 'CodeClubIDE',
+    source: 'Proyecto personal',
+    description: 'IDE offline-first construido desde cero: editor, terminal, debugger y tres modos —Coding, Studio y Design— con agentes de IA, memoria persistente y RAG local.',
+    tags: ['Electron', 'React', 'Rust', 'WASM', 'IA'],
+    image: '/images/projects/Codeclub.png',
+  },
+  {
+    title: 'TurnoCore',
+    source: 'Matecore',
+    description: 'SaaS multi-tenant de gestión de turnos con booking público, dashboard privado y marketplace de pagos con Mercado Pago.',
+    tags: ['Next.js', 'Supabase', 'Prisma', 'Mercado Pago'],
+    image: '/images/projects/turnocore.png',
+  },
+  {
+    title: 'JAM',
+    source: 'Matecore',
+    description: 'Landing page promocional fullscreen con slider cinematográfico, autenticación y dashboard de competidor.',
+    tags: ['Next.js', 'GSAP', 'Better Auth', 'PostgreSQL'],
+    image: '/images/projects/JAM.png',
+  },
+  {
+    title: 'Bewell Esthetic Miami',
+    source: 'Matecore',
+    description: 'Sitio premium bilingüe para una clínica estética, con booking online, captación automatizada de leads y una experiencia de marca animada.',
+    tags: ['Next.js', 'i18n', 'Calendly', 'GoHighLevel'],
+    image: '/images/projects/bewell.png',
   },
 ];
 
 const stack = ['TypeScript', 'React', 'Next.js', 'Astro', 'Rust', 'Python', 'Electron', 'Tauri', 'PostgreSQL', 'Supabase', 'Prisma', 'OpenAI', 'WebAssembly', 'Vite+'];
+const featuredProjects = projects.slice(0, 2);
+const otherProjects = projects.slice(2);
+const services = [
+  { number: '01', title: 'Productos web', description: 'SaaS, dashboards y herramientas para operar mejor.', image: 'https://images.unsplash.com/photo-1577547664907-926044d3fc49?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { number: '02', title: 'IA aplicada', description: 'Agentes y automatizaciones para tu negocio.', image: 'https://plus.unsplash.com/premium_photo-1776986783995-4ee059f318c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { number: '03', title: 'Herramientas internas', description: 'Software a medida para trabajar mejor.', image: 'https://unsplash.com/photos/Im7lZjxeLhg/download?force=true&w=1332' },
+];
 ---
 
 <BaseLayout title="Ignacio Angelone · Senior Software Engineer (AI)" description="Senior Software Engineer (AI) especializado en productos web, desktop e inteligencia artificial.">
   <section id="inicio" class="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-ink-500">
     <div class="flex flex-1 flex-col overflow-hidden bg-ink-900">
-      <div class="relative h-[25svh] min-h-[180px] max-h-[280px] shrink-0 overflow-hidden bg-ink-800">
-        <div class="absolute inset-0 scale-110 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1772289495927-aa33999f8e1e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-        <div class="absolute inset-0 bg-ink-950/55"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-ink-900/90"></div>
+        <div class="relative h-[25svh] min-h-[180px] max-h-[280px] shrink-0 overflow-hidden border-b border-white/20 bg-ink-800">
+          <div class="absolute inset-0 scale-110 bg-cover bg-center blur-[2px]" style="background-image: url('https://images.unsplash.com/photo-1429041966141-44d228a42775?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+          <div class="absolute inset-0 bg-ink-950/50"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/20 to-transparent"></div>
       </div>
       <div class="relative mx-auto flex w-full flex-1 flex-col justify-center max-w-6xl px-6 pb-14 pt-32 sm:px-10 sm:pb-16 sm:pt-36">
-        <img src="/images/profile.jpeg" alt="Ignacio Angelone" class="absolute -top-20 left-6 h-40 w-40 rounded-full border-8 border-ink-900 object-cover shadow-xl shadow-black/30 sm:left-10 sm:h-44 sm:w-44" />
+        <div class="absolute -top-20 left-6 z-10 h-40 w-40 rounded-full border-4 border-white/75 bg-black p-1 shadow-xl shadow-black/30 sm:left-10 sm:h-44 sm:w-44">
+          <a href="https://www.linkedin.com/in/ignacioangelone/" target="_blank" rel="noreferrer" aria-label="Ver perfil de Ignacio Angelone en LinkedIn" class="group/avatar relative block h-full w-full overflow-hidden rounded-full bg-black">
+            <img src="/images/profile.jpeg" alt="Ignacio Angelone" class="h-full w-full object-cover" />
+            <span class="absolute inset-0 flex items-center justify-center bg-black/90 text-3xl font-bold text-white opacity-0 transition-opacity duration-300 group-hover/avatar:opacity-100 group-focus-visible/avatar:opacity-100">in</span>
+          </a>
+        </div>
         <div class="max-w-4xl">
           <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Senior Software Engineer (AI)</p>
           <h1 class="mt-5 text-5xl font-bold tracking-tight sm:text-7xl lg:text-[5rem]">Hago que las ideas funcionen.</h1>
-          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">Soy Ignacio Angelone, ingeniero de software senior especializado en IA. Diseño y construyo SaaS, herramientas de escritorio e interfaces inteligentes desde la arquitectura hasta producción.</p>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">Soy Ignacio. Trabajo como Senior Software Engineer (AI) y me gusta llevar las ideas desde la primera conversación hasta un producto que se pueda usar.</p>
           <div class="mt-9 flex flex-wrap gap-4">
-            <a href="#proyectos" class="rounded-full bg-accent-cream px-5 py-3 font-semibold text-accent-brown-dark transition hover:bg-white">Ver proyectos</a>
-            <a href="#contacto" class="rounded-full border border-ink-400 px-5 py-3 font-semibold text-slate-200 transition hover:border-accent-cream">Contactarme</a>
+            <a href="#proyectos" class="rounded-full bg-accent-cream px-5 py-3 font-semibold text-accent-brown-dark transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_8px_22px_rgba(225,220,201,0.14)] active:scale-[0.98]">Ver proyectos</a>
+            <a href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vengo%20de%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto." target="_blank" rel="noreferrer" class="rounded-full border border-ink-400 px-5 py-3 font-semibold text-slate-200 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-accent-cream hover:bg-ink-800 hover:shadow-[0_8px_22px_rgba(225,220,201,0.08)] active:scale-[0.98]">Hablemos de tu idea</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="proyectos" class="mx-auto max-w-6xl scroll-mt-8 px-6 pb-24">
-    <div class="mb-7 flex items-end justify-between gap-4"><h2 class="text-2xl font-semibold">Proyectos destacados</h2><span class="text-sm text-accent-cream">Trabajo seleccionado</span></div>
-    <div class="grid gap-5 md:grid-cols-2">{projects.map((project) => <ProjectCard {...project} />)}</div>
+  <section class="mx-auto max-w-6xl px-6 pb-8 pt-20 sm:pt-28">
+    <div><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">En qué puedo ayudarte</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Cuando una idea necesita convertirse en algo real.</h2></div>
+    <div class="mt-10">{services.map((service) => <ServiceCard {...service} />)}</div>
+  </section>
+
+  <section id="proyectos" class="mx-auto max-w-6xl scroll-mt-8 px-6 pb-24 pt-20 sm:pt-28">
+    <div class="mb-7 flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-4"><h2 class="text-2xl font-semibold">Proyectos destacados</h2><span class="text-sm text-accent-cream">Trabajo seleccionado</span></div>
+    <div>{featuredProjects.map((project, index) => <ProjectCard {...project} index={index} reverse={index % 2 === 1} />)}</div>
+    <div class="mb-7 mt-16 flex flex-col items-start gap-2 border-t border-ink-500 pt-16 sm:mt-24 sm:flex-row sm:items-end sm:justify-between sm:gap-4"><h2 class="text-2xl font-semibold">Proyectos</h2><span class="text-sm text-accent-cream">Trabajo realizado</span></div>
+    <div>{otherProjects.map((project, index) => <ProjectCard {...project} index={index + 2} reverse={(index + 2) % 2 === 1} />)}</div>
   </section>
 
   <section id="sobre-mi" class="mx-auto max-w-6xl scroll-mt-8 px-6 pb-24">
@@ -77,9 +106,107 @@ const stack = ['TypeScript', 'React', 'Next.js', 'Astro', 'Rust', 'Python', 'Ele
   </section>
 
   <section id="experiencia" class="mx-auto max-w-6xl scroll-mt-8 px-6 pb-24">
-    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Experiencia</p>
-    <div class="mt-7 grid gap-5 md:grid-cols-2"><div class="rounded-2xl border border-ink-500 bg-ink-900 p-6"><p class="text-sm text-slate-500">oct. 2024 — actualidad · Remoto</p><h3 class="mt-3 text-xl font-semibold">Desarrollador de Software · Matecore</h3><p class="mt-3 leading-7 text-slate-400">SaaS multi-tenant, pagos, agentes de IA, automatizaciones CRM y testing E2E. Implementé soluciones que generaron más de $16K USD para un cliente.</p></div><div class="rounded-2xl border border-ink-500 bg-ink-900 p-6"><p class="text-sm text-slate-500">ago. 2023 — jul. 2024 · Remoto</p><h3 class="mt-3 text-xl font-semibold">Desarrollador Full-Stack Independiente</h3><p class="mt-3 leading-7 text-slate-400">Soluciones web full-stack con React y Next.js, desde requisitos y arquitectura hasta deploy, además de prototipos multijugador en Unreal Engine.</p></div></div>
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Experiencia</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight">Lo que fui construyendo.</h2>
+      </div>
+      <span class="text-sm text-accent-cream">Trabajo seleccionado</span>
+    </div>
+    <div class="mt-10 divide-y divide-white/15 border-y border-white/20">
+      <article class="py-7 sm:py-9">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+          <h3 class="text-2xl font-semibold tracking-tight text-white">Desarrollador de Software <span class="text-slate-500">·</span> Matecore</h3>
+          <p class="shrink-0 text-sm leading-6 text-slate-400 sm:text-right">oct. 2024 — actualidad<br />Remoto</p>
+        </div>
+        <div>
+          <p class="mt-3 max-w-2xl leading-7 text-slate-400">SaaS multi-tenant, pagos, agentes de IA, automatizaciones CRM y testing E2E. Implementé soluciones que generaron más de $16K USD para un cliente.</p>
+        </div>
+      </article>
+      <article class="py-7 sm:py-9">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+          <h3 class="text-2xl font-semibold tracking-tight text-white">Desarrollador Full-Stack Independiente</h3>
+          <p class="shrink-0 text-sm leading-6 text-slate-400 sm:text-right">ago. 2023 — jul. 2024<br />Remoto</p>
+        </div>
+        <div>
+          <p class="mt-3 max-w-2xl leading-7 text-slate-400">Soluciones web full-stack con React y Next.js, desde requisitos y arquitectura hasta deploy, además de prototipos multijugador en Unreal Engine.</p>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <section id="contacto" class="mx-auto max-w-6xl scroll-mt-8 px-6 pb-28"><div class="rounded-3xl border border-accent-brown/70 bg-accent-brown-dark/80 p-8 sm:p-12"><p class="text-sm uppercase tracking-[0.3em] text-accent-cream">¿Trabajamos juntos?</p><h2 class="mt-4 text-4xl font-bold tracking-tight">Contame qué estás construyendo.</h2><a class="mt-7 inline-block font-semibold text-accent-cream hover:text-white" href="mailto:hola@ejemplo.com">hola@ejemplo.com →</a></div></section>
+  <dialog id="project-modal" class="m-auto w-[min(94vw,1200px)] max-w-none border-0 bg-transparent p-0 text-white backdrop:bg-black/85 backdrop:backdrop-blur-sm">
+    <div class="relative flex max-h-[92vh] flex-col">
+      <div class="mb-5 flex flex-wrap items-baseline justify-center gap-2">
+        <h2 id="project-modal-title" class="text-2xl font-semibold tracking-tight sm:text-3xl"></h2>
+        <span id="project-modal-source" class="text-sm text-accent-cream sm:text-base"></span>
+      </div>
+      <div class="relative flex min-h-[55vh] items-center justify-center overflow-hidden bg-black/20">
+        <img id="project-modal-image" src="" alt="" class="max-h-[72vh] w-full select-none object-contain" draggable="false" />
+        <button id="project-modal-prev" type="button" class="absolute left-0 top-1/2 flex size-12 -translate-y-1/2 cursor-pointer items-center justify-center text-4xl text-white/80 transition-colors hover:text-white sm:-left-2" aria-label="Proyecto anterior">‹</button>
+        <button id="project-modal-next" type="button" class="absolute right-0 top-1/2 flex size-12 -translate-y-1/2 cursor-pointer items-center justify-center text-4xl text-white/80 transition-colors hover:text-white sm:-right-2" aria-label="Proyecto siguiente">›</button>
+      </div>
+    </div>
+  </dialog>
+
 </BaseLayout>
+
+<script>
+  const modal = document.querySelector<HTMLDialogElement>('#project-modal');
+  const modalImage = document.querySelector<HTMLImageElement>('#project-modal-image');
+  const modalTitle = document.querySelector<HTMLElement>('#project-modal-title');
+  const modalSource = document.querySelector<HTMLElement>('#project-modal-source');
+  const previews = Array.from(document.querySelectorAll<HTMLButtonElement>('.project-preview'));
+  let currentIndex = 0;
+  let autoplay: number | undefined;
+
+  const renderProject = (index: number) => {
+    currentIndex = (index + previews.length) % previews.length;
+    const preview = previews[currentIndex];
+    if (!modalImage || !modalTitle || !modalSource) return;
+    modalImage.src = preview.dataset.projectImage ?? '';
+    modalImage.alt = preview.dataset.projectTitle ?? '';
+    modalTitle.textContent = preview.dataset.projectTitle ?? '';
+    modalSource.textContent = `· ${preview.dataset.projectSource ?? ''}`;
+    modalImage.classList.remove('project-modal-enter');
+    void modalImage.offsetWidth;
+    modalImage.classList.add('project-modal-enter');
+  };
+
+  const stopAutoplay = () => {
+    if (autoplay) window.clearInterval(autoplay);
+    autoplay = undefined;
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    if (window.matchMedia('(max-width: 639px)').matches && previews.length > 1) {
+      autoplay = window.setInterval(() => renderProject(currentIndex + 1), 4500);
+    }
+  };
+
+  previews.forEach((preview, index) => {
+    preview.addEventListener('click', () => {
+      renderProject(index);
+      modal?.showModal();
+      startAutoplay();
+    });
+  });
+
+  document.querySelector('#project-modal-prev')?.addEventListener('click', () => renderProject(currentIndex - 1));
+  document.querySelector('#project-modal-next')?.addEventListener('click', () => renderProject(currentIndex + 1));
+  modal?.addEventListener('close', stopAutoplay);
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal) modal.close();
+  });
+
+  let dragStart = 0;
+  modalImage?.addEventListener('pointerdown', (event) => {
+    dragStart = event.clientX;
+    modalImage.setPointerCapture(event.pointerId);
+  });
+  modalImage?.addEventListener('pointerup', (event) => {
+    const distance = event.clientX - dragStart;
+    if (Math.abs(distance) > 50) renderProject(currentIndex + (distance < 0 ? 1 : -1));
+  });
+</script>
