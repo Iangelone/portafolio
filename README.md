@@ -1,6 +1,6 @@
 # Ignacio Angelone — Portfolio
 
-> **Senior Software Engineer (AI)**  
+> **Software Developer**  
 > Hago que las ideas funcionen.
 
 Este repositorio contiene mi portfolio personal: una página única donde reúno los productos que construí, las tecnologías con las que trabajo y el tipo de problemas que me gusta resolver.
