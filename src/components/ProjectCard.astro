@@ -10,7 +10,8 @@ interface Props {
 }
 
 const { title, description, tags, source, image, reverse = false, index = 0 } = Astro.props;
-const number = String(index + 1).padStart(2, '0');
+const softTagColors = ['#A6BFDD', '#D9A7B0', '#B9D8C2', '#E6C79C', '#C9B8E8'];
+const tagColor = softTagColors[index % softTagColors.length];
 ---
 
 <article
@@ -18,23 +19,21 @@ const number = String(index + 1).padStart(2, '0');
     'group grid items-center gap-10 py-16 motion-safe:animate-[project-enter_900ms_cubic-bezier(0.22,1,0.36,1)_both] md:grid-cols-2 md:gap-16 lg:py-24',
     reverse && 'md:[&>div:first-child]:order-2 md:[&>div:last-child]:order-1',
   ]}
-  style={`animation-delay: ${index * 100}ms`}
->
+  style={`animation-delay: ${index * 100}ms; --project-tag-color: ${tagColor}`}
+  >
   <div>
-    <div class="mb-8 flex items-center gap-4 text-sm text-accent-cream"><span>{number}</span><span class="h-px w-10 bg-accent-brown"></span><span>{source}</span></div>
     <h3 class="max-w-xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">{title}</h3>
-    <p class="mt-6 max-w-lg text-lg leading-8 text-slate-400">{description}</p>
+    <p class="mt-6 max-w-lg text-lg leading-8 text-slate-300">{description}</p>
     <div class="mt-8 flex flex-wrap gap-2">
-      {tags.map((tag) => <span class="rounded-full border border-white/30 bg-accent-cream/90 px-3.5 py-1.5 text-xs font-medium text-accent-brown-dark shadow-sm shadow-black/10 backdrop-blur-sm">{tag}</span>)}
+      {tags.map((tag) => <span class="project-tag px-3.5 py-1.5 text-xs font-semibold shadow-sm shadow-black/10">{tag}</span>)}
     </div>
   </div>
 
   <div class="relative">
     {image ? (
       <>
-        <div aria-hidden="true" class="absolute -right-5 top-5 h-full w-full rounded-[1.75rem] bg-cover bg-center opacity-55 blur-md" style={`background-image: url('${image}')`}></div>
-        <button type="button" class="project-preview relative z-10 block w-full cursor-pointer text-left" data-project-image={image} data-project-title={title} data-project-source={source} aria-label={`Ver imágenes de ${title}`}>
-          <img src={image} alt={`Captura de ${title}`} loading="lazy" class="block h-auto w-full rounded-[1.75rem]" />
+        <button type="button" class="project-preview relative z-10 block w-full cursor-pointer overflow-hidden rounded-[1.75rem] border border-white/25 bg-black/20 text-left transition-colors duration-500 hover:border-white/60" data-project-image={image} data-project-title={title} data-project-source={source} aria-label={`Ver imágenes de ${title}`}>
+          <img src={image} alt={`Captura de ${title}`} class="block h-auto w-full" />
         </button>
       </>
     ) : (

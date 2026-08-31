@@ -7,32 +7,62 @@ interface Props {
 }
 
 const { number, title, description, image } = Astro.props;
-const whatsappUrl = `https://wa.me/5491122867368?text=${encodeURIComponent(`Hola Ignacio, vengo de tu portafolio y me interesa ${title}.`)}`;
+const whatsappMessages: Record<string, string> = {
+  '01': 'Hola Ignacio, vi tu portafolio y me gustaría conversar sobre sistemas de negocio para mi empresa.',
+  '02': 'Hola Ignacio, vi tu portafolio y me gustaría conversar sobre soluciones de IA y automatización.',
+  '03': 'Hola Ignacio, vi tu portafolio y me gustaría conversar sobre una oportunidad para sumarte a nuestro equipo.',
+};
+const whatsappUrl = `https://wa.me/5491122867368?text=${encodeURIComponent(whatsappMessages[number] ?? `Hola Ignacio, vi tu portafolio y me gustaría conversar sobre ${title}.`)}`;
 ---
 
 <a data-service-card href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={`Consultar por ${title}`} class="group relative isolate block overflow-hidden border-b border-ink-500 py-6 outline-none sm:py-8">
   <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 z-0 w-1/2 opacity-0 transition-opacity duration-700 ease-out">
-    <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${image}')`}></div>
-    <div class="absolute inset-0" style="background: linear-gradient(90deg, #000000 0%, rgba(0,0,0,0.99) 22%, rgba(0,0,0,0.92) 42%, rgba(0,0,0,0.68) 64%, rgba(0,0,0,0.3) 82%, rgba(0,0,0,0) 100%);"></div>
-    <div class="absolute inset-y-0 right-0 z-10 flex w-1/2 items-center justify-end pr-5 text-accent-cream sm:pr-8">
-      {number === '01' && <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-6 sm:size-7"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5" /><path d="M3 8h18M7 6h.01M10 6h.01M13 6h.01M7 12h4M7 16h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>}
-      {number === '02' && <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-6 sm:size-7"><path d="M12 3.5 13.8 9l5.7 1.8-5.7 1.8-1.8 5.9-1.8-5.9-5.7-1.8L10.2 9 12 3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /><path d="m18.5 15 .7 2.3 2.3.7-2.3.7-.7 2.3-2.3-.7 2.3-.7.7-2.3Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" /></svg>}
-      {number === '03' && <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-6 sm:size-7"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5" /><path d="M8 8h3v3H8zM13 8h3v3h-3zM8 13h3v3H8zM13 13h3v3h-3z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" /></svg>}
+    <div class={`service-tetris-art service-tetris-art-${number}`}>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
+    <div class="absolute inset-0" style="background: linear-gradient(90deg, #000000 0%, rgba(0,0,0,0.99) 22%, rgba(0,0,0,0.92) 42%, rgba(0,0,0,0.68) 64%, rgba(0,0,0,0.3) 82%, rgba(0,0,0,0) 100%);"></div>
   </div>
   <div class="relative z-10 grid min-h-24 grid-cols-[5rem_1fr] items-center gap-6 sm:grid-cols-[6rem_1fr] sm:gap-10">
     <span class="origin-left text-6xl font-semibold leading-none tracking-tighter text-accent-cream transition-transform duration-500 ease-out sm:text-8xl">{number}</span>
     <div class="service-copy max-w-xl transition-[opacity,transform] duration-500 ease-out sm:translate-x-3 sm:opacity-0">
       <h3 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">{title}</h3>
-      <p class="mt-2 max-w-md text-sm leading-6 text-slate-400">{description}</p>
+      <p class="mt-2 max-w-md text-sm leading-6 text-slate-300">{description}</p>
     </div>
   </div>
 </a>
 
 <script>
-  document.querySelectorAll<HTMLElement>('[data-service-card]').forEach((card) => {
-    const reveal = () => card.classList.add('is-revealed');
-    card.addEventListener('pointerenter', reveal, { once: true });
-    card.addEventListener('focusin', reveal, { once: true });
-  });
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-service-card]')];
+  const section = document.querySelector<HTMLElement>('[data-service-section]');
+  let timer = 0;
+  let activeIndex = 0;
+
+  const revealNextCard = () => {
+    if (activeIndex >= cards.length) {
+      stopAnimation();
+      return;
+    }
+    cards[activeIndex].classList.add('is-revealed');
+    activeIndex += 1;
+  };
+
+  const stopAnimation = () => {
+    window.clearInterval(timer);
+    timer = 0;
+  };
+
+  const startAnimation = () => {
+    if (timer || activeIndex >= cards.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    revealNextCard();
+    if (activeIndex < cards.length) timer = window.setInterval(revealNextCard, 2000);
+  };
+
+  if (section && cards.length) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) startAnimation();
+      else stopAnimation();
+    }, { threshold: 0.2 });
+    observer.observe(section);
+  }
 </script>

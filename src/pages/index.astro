@@ -5,56 +5,46 @@ import ServiceCard from '../components/ServiceCard.astro';
 
 const projects = [
   {
-    title: 'Concierge',
+    title: 'CodeClub',
     source: 'Proyecto personal',
-    description: 'SaaS de asistencia comercial con IA que genera cotizaciones, gestiona clientes y coordina cuatro sub-agentes especializados en tiempo real.',
-    tags: ['AI SDK', 'Supabase', 'RAG', 'DDD'],
-    image: '/images/projects/concierge.png',
+    description: 'IDE de escritorio open source y local-first para desarrollar aplicaciones con agentes de IA, terminal, navegador y evidencia auditable de cada ejecución.',
+    tags: ['Tauri', 'React', 'Rust', 'TypeScript', 'IA'],
+    image: '/images/projects/Codeclub windowspc.png',
   },
   {
     title: 'Socios del Negocio',
     source: 'Matecore',
     description: 'Plataforma de marketing digital y cursos con landing pages de alta conversión, pagos con Stripe, CRM y experimentos A/B en Edge Middleware.',
     tags: ['Next.js', 'Stripe', 'GHL', 'GSAP'],
-    image: '/images/projects/socios-webinar.png',
-  },
-  {
-    title: 'CodeClubIDE',
-    source: 'Proyecto personal',
-    description: 'IDE offline-first construido desde cero: editor, terminal, debugger y tres modos —Coding, Studio y Design— con agentes de IA, memoria persistente y RAG local.',
-    tags: ['Electron', 'React', 'Rust', 'WASM', 'IA'],
-    image: '/images/projects/Codeclub.png',
+    image: '/images/projects/sociosnueva.png',
   },
   {
     title: 'TurnoCore',
     source: 'Matecore',
     description: 'SaaS multi-tenant de gestión de turnos con booking público, dashboard privado y marketplace de pagos con Mercado Pago.',
     tags: ['Next.js', 'Supabase', 'Prisma', 'Mercado Pago'],
-    image: '/images/projects/turnocore.png',
+    image: '/images/projects/turnocorenueva.png',
   },
   {
     title: 'JAM',
     source: 'Matecore',
     description: 'Landing page promocional fullscreen con slider cinematográfico, autenticación y dashboard de competidor.',
     tags: ['Next.js', 'GSAP', 'Better Auth', 'PostgreSQL'],
-    image: '/images/projects/JAM.png',
+    image: '/images/projects/jamnueva.png',
   },
   {
     title: 'Bewell Esthetic Miami',
     source: 'Matecore',
     description: 'Sitio premium bilingüe para una clínica estética, con booking online, captación automatizada de leads y una experiencia de marca animada.',
     tags: ['Next.js', 'i18n', 'Calendly', 'GoHighLevel'],
-    image: '/images/projects/bewell.png',
+    image: '/images/projects/bewellnueva.png',
   },
 ];
 
-const stack = ['TypeScript', 'React', 'Next.js', 'Astro', 'Rust', 'Python', 'Electron', 'Tauri', 'PostgreSQL', 'Supabase', 'Prisma', 'OpenAI', 'WebAssembly', 'Vite+'];
-const featuredProjects = projects.slice(0, 2);
-const otherProjects = projects.slice(2);
 const services = [
-  { number: '01', title: 'Productos web', description: 'SaaS, dashboards y herramientas para operar mejor.', image: 'https://images.unsplash.com/photo-1577547664907-926044d3fc49?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { number: '01', title: 'Sistemas de negocio', description: 'CRM, dashboards y automatizaciones para ventas, stock y operaciones.', image: 'https://images.unsplash.com/photo-1577547664907-926044d3fc49?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   { number: '02', title: 'IA aplicada', description: 'Agentes y automatizaciones para tu negocio.', image: 'https://plus.unsplash.com/premium_photo-1776986783995-4ee059f318c9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-  { number: '03', title: 'Herramientas internas', description: 'Software a medida para trabajar mejor.', image: 'https://unsplash.com/photos/Im7lZjxeLhg/download?force=true&w=1332' },
+  { number: '03', title: 'Contratación', description: 'Sumá un desarrollador a tu equipo y llevemos ideas a producción.', image: 'https://unsplash.com/photos/Im7lZjxeLhg/download?force=true&w=1332' },
 ];
 ---
 
@@ -75,18 +65,24 @@ const services = [
           </a>
         </div>
         <div class="max-w-4xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Software Developer</p>
-          <h1 class="kinetic-title mt-5 text-5xl font-bold tracking-tight sm:text-7xl lg:text-[5rem]" data-text="Hago que las ideas funcionen." aria-label="Hago que las ideas funcionen.">
-            <span aria-hidden="true" class="kinetic-word">Hago</span>{' '}
-            <span aria-hidden="true" class="kinetic-word">que</span>{' '}
-            <span aria-hidden="true" class="kinetic-word">las</span>{' '}
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Desarrollador de Software</p>
+          <h1 class="kinetic-title mt-5 text-5xl font-bold tracking-tight sm:text-7xl lg:text-[5rem]" data-text="Convierto ideas en soluciones digitales que generan resultados." aria-label="Convierto ideas en soluciones digitales que generan resultados.">
+            <span aria-hidden="true" class="kinetic-word">Convierto</span>{' '}
             <span aria-hidden="true" class="kinetic-word">ideas</span>{' '}
-            <span aria-hidden="true" class="kinetic-word">funcionen.</span>
+            <span aria-hidden="true" class="kinetic-word">en</span>{' '}
+            <span aria-hidden="true" class="kinetic-word">soluciones</span>{' '}
+            <span aria-hidden="true" class="kinetic-word">digitales</span>{' '}
+            <span aria-hidden="true" class="kinetic-word">que</span>{' '}
+            <span aria-hidden="true" class="kinetic-word">generan</span>{' '}
+            <span aria-hidden="true" class="kinetic-word">resultados.</span>
           </h1>
-          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">Soy Ignacio. Trabajo como Software Developer y me gusta llevar las ideas desde la primera conversación hasta un producto que se pueda usar.</p>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300">Soy Ignacio. Trabajo como desarrollador de software y me gusta llevar las ideas desde la primera conversación hasta una solución que realmente funcione.</p>
           <div class="mt-9 flex flex-wrap gap-4">
-            <a href="#proyectos" class="rounded-full bg-accent-cream px-5 py-3 font-semibold text-accent-brown-dark transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_8px_22px_rgba(225,220,201,0.14)] active:scale-[0.98]">Ver proyectos</a>
-            <a href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vengo%20de%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto." target="_blank" rel="noreferrer" class="rounded-full border border-ink-400 px-5 py-3 font-semibold text-slate-200 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-accent-cream hover:bg-ink-800 hover:shadow-[0_8px_22px_rgba(225,220,201,0.08)] active:scale-[0.98]">Hablemos de tu idea</a>
+            <a id="contact-button" href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20con%20vos." target="_blank" rel="noreferrer" class="tetris-accent-button inline-flex h-14 items-center justify-center px-5 font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(241,238,230,0.08)] active:scale-[0.98]">Hablemos</a>
+            <a href="#proyectos" class="group inline-flex h-14 items-center justify-center gap-2 px-1 font-semibold text-slate-300 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:text-white active:scale-[0.98]">
+              Ver proyectos
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -97,52 +93,69 @@ const services = [
     <canvas class="tetris-bridge-canvas" width="1200" height="132"></canvas>
   </section>
 
-  <section class="mx-auto max-w-6xl bg-black px-6 pb-8 pt-20 sm:pt-28">
-    <div><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">En qué puedo ayudarte</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Cuando una idea necesita convertirse en algo real.</h2></div>
+  <section data-service-section class="mx-auto max-w-6xl bg-black px-6 pb-8 pt-20 sm:pt-28">
+    <div><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">¿En qué puedo ayudarte?</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Cuando una idea necesita convertirse en algo real.</h2></div>
     <div class="mt-10">{services.map((service) => <ServiceCard {...service} />)}</div>
   </section>
 
-  <section id="proyectos" class="mx-auto max-w-6xl bg-black scroll-mt-8 px-6 pb-24 pt-20 sm:pt-28">
-    <div class="mb-7 flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-4"><h2 class="text-2xl font-semibold">Proyectos destacados</h2><span class="text-sm text-accent-cream">Trabajo seleccionado</span></div>
-    <div>{featuredProjects.map((project, index) => <ProjectCard {...project} index={index} reverse={index % 2 === 1} />)}</div>
-    <div class="mb-7 mt-16 flex flex-col items-start gap-2 border-t border-ink-500 pt-16 sm:mt-24 sm:flex-row sm:items-end sm:justify-between sm:gap-4"><h2 class="text-2xl font-semibold">Proyectos</h2><span class="text-sm text-accent-cream">Trabajo realizado</span></div>
-    <div>{otherProjects.map((project, index) => <ProjectCard {...project} index={index + 2} reverse={(index + 2) % 2 === 1} />)}</div>
-  </section>
-
-  <section id="sobre-mi" class="mx-auto max-w-6xl bg-black scroll-mt-8 px-6 pb-24">
-    <div class="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-      <div><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Sobre mí</p><h2 class="mt-4 text-4xl font-bold tracking-tight">Del prototipo al producto.</h2></div>
-      <div><p class="text-lg leading-8 text-slate-400">Empecé con Blueprints en Unreal Engine y mi camino me llevó a desarrollar software, "back", "front", "AI" y un largo etc. Me interesa mucho construir soluciones que realmente mejoren la calidad de vida del usuario.</p><div class="mt-8 flex flex-wrap gap-2">{stack.map((item) => <span class="rounded-full border border-ink-500 bg-ink-900 px-3 py-1.5 text-sm text-slate-300">{item}</span>)}</div></div>
-    </div>
-  </section>
-
-  <section id="experiencia" class="mx-auto max-w-6xl bg-black scroll-mt-8 px-6 pb-24">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Experiencia</p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-tight">Lo que fui construyendo.</h2>
+  <section id="proyectos" class="mx-auto max-w-6xl border-b border-white/15 bg-black scroll-mt-8 px-6 pb-24 pt-20 sm:pt-28">
+    <div class="mb-7"><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">¿Qué proyectos querés conocer?</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Software, IA y automatizaciones para impulsar tu negocio.</h2></div>
+    <div data-featured-carousel class="relative overflow-hidden">
+      <div data-featured-track class="flex">
+        {projects.map((project, index) => <ProjectCard {...project} index={index} reverse={index % 2 === 1} />)}
       </div>
-      <span class="text-sm text-accent-cream">Trabajo seleccionado</span>
+      <div class="mt-2 flex items-center justify-between pt-4">
+        <span data-featured-indicator class="text-2xl font-semibold tracking-tight text-accent-cream">01 / 05</span>
+        <div class="flex gap-2">
+          <button data-featured-prev type="button" class="carousel-control inline-flex size-8 items-center justify-center p-0 text-white" aria-label="Proyecto destacado anterior">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M19 12H5" /><path d="m12 19-7-7 7-7" /></svg>
+          </button>
+          <button data-featured-next type="button" class="carousel-control inline-flex size-8 items-center justify-center p-0 text-white" aria-label="Proyecto destacado siguiente">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="mt-10 divide-y divide-white/15 border-y border-white/20">
-      <article class="py-7 sm:py-9">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-          <h3 class="text-2xl font-semibold tracking-tight text-white">Desarrollador de Software <span class="text-slate-500">·</span> Matecore</h3>
-          <p class="shrink-0 text-sm leading-6 text-slate-400 sm:text-right">oct. 2024 — actualidad<br />Remoto</p>
+  </section>
+
+  <section class="tetris-bridge" aria-hidden="true">
+    <canvas class="tetris-bridge-canvas" width="1200" height="132"></canvas>
+  </section>
+
+  <section id="sobre-mi" class="mx-auto max-w-6xl scroll-mt-8 border-y border-white/10 bg-black px-6 pb-32 pt-20 sm:pb-40 sm:pt-28">
+    <div class="relative overflow-hidden">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">¿Quién convierte ideas en productos?</p>
+        <h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Del prototipo al producto.</h2>
+      </div>
+      <div class="mt-16 grid border-t border-white/15 lg:grid-cols-[0.35fr_1fr]">
+        <div class="flex gap-4 pt-6 text-sm uppercase tracking-[0.2em] text-slate-500"><span class="text-accent-cream">01</span><span class="text-white">Mi recorrido</span></div>
+        <p class="max-w-3xl pt-6 text-xl leading-9 text-slate-300 sm:text-2xl sm:leading-10">Empecé con Blueprints en Unreal Engine y mi camino me llevó a desarrollar software, "back", "front", "AI" y un largo etc. Me interesa mucho construir soluciones que realmente mejoren la calidad de vida del usuario.</p>
+      </div>
+      <div class="mt-16 border-t border-white/15 pt-6">
+        <div class="flex items-baseline justify-between gap-6">
+          <p class="text-sm uppercase tracking-[0.2em] text-accent-cream">Experiencia</p>
+          <span class="hidden text-xs uppercase tracking-[0.2em] text-slate-500 sm:block">02 / Trayectoria</span>
         </div>
-        <div>
-          <p class="mt-3 max-w-2xl leading-7 text-slate-400">SaaS multi-tenant, pagos, agentes de IA, automatizaciones CRM y testing E2E. Implementé soluciones que generaron más de $16K USD para un cliente.</p>
+        <div class="mt-8 divide-y divide-white/10">
+          <article class="grid gap-3 py-6 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-8">
+            <div><h3 class="text-xl font-semibold text-white">Desarrollador de Software · Matecore</h3><p class="mt-2 leading-7 text-slate-400">Cuatro SaaS multi-tenant completos, marketplaces de pagos, automatizaciones CRM, dashboards y arquitecturas con RLS.</p><div class="mt-4 flex flex-wrap gap-2"><span class="experience-tag">TypeScript</span><span class="experience-tag">Next.js</span><span class="experience-tag">PostgreSQL</span><span class="experience-tag">Supabase</span><span class="experience-tag">Prisma</span><span class="experience-tag">OpenAI</span><span class="experience-tag">Vercel AI SDK</span><span class="experience-tag">Playwright</span></div></div>
+            <p class="text-sm text-slate-500 sm:text-right">oct. 2024 — actualidad<br />Remoto</p>
+          </article>
+          <article class="grid gap-3 py-6 sm:grid-cols-[1fr_auto] sm:gap-8">
+            <div><h3 class="text-xl font-semibold text-white">Desarrollador Full-Stack Independiente</h3><p class="mt-2 leading-7 text-slate-400">Soluciones web con React y Next.js, desde requisitos y arquitectura hasta deploy, además de prototipos multijugador en Unreal Engine.</p><div class="mt-4 flex flex-wrap gap-2"><span class="experience-tag">React</span><span class="experience-tag">Next.js</span><span class="experience-tag">TypeScript</span><span class="experience-tag">Unreal Engine</span></div></div>
+            <p class="text-sm text-slate-500 sm:text-right">ago. 2023 — jul. 2024<br />Remoto</p>
+          </article>
+          <article class="grid gap-3 py-6 sm:grid-cols-[1fr_auto] sm:gap-8">
+            <div><h3 class="text-xl font-semibold text-white">Auxiliar contable · Dicampa S.A.</h3><p class="mt-2 leading-7 text-slate-400">Conciliaciones bancarias y facturación en jornada presencial.</p><div class="mt-4 flex flex-wrap gap-2"><span class="experience-tag">Conciliaciones bancarias</span><span class="experience-tag">Facturación</span><span class="experience-tag">Contabilidad</span><span class="experience-tag">Microsoft Excel</span></div></div>
+            <p class="text-sm text-slate-500 sm:text-right">ene. 2023 — may. 2023<br />Presencial</p>
+          </article>
+          <article class="grid gap-3 py-6 sm:grid-cols-[1fr_auto] sm:gap-8">
+            <div><h3 class="text-xl font-semibold text-white">Auxiliar administrativo · Transacciones Agente de Valores S.A.</h3><p class="mt-2 leading-7 text-slate-400">Conciliaciones bancarias y control de egresos e ingresos en sistema ESCO.</p><div class="mt-4 flex flex-wrap gap-2"><span class="experience-tag">Conciliaciones bancarias</span><span class="experience-tag">Administración</span><span class="experience-tag">Sistema ESCO</span></div></div>
+            <p class="text-sm text-slate-500 sm:text-right">abr. 2022 — jul. 2022<br />Presencial</p>
+          </article>
         </div>
-      </article>
-      <article class="py-7 sm:py-9">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-          <h3 class="text-2xl font-semibold tracking-tight text-white">Desarrollador Full-Stack Independiente</h3>
-          <p class="shrink-0 text-sm leading-6 text-slate-400 sm:text-right">ago. 2023 — jul. 2024<br />Remoto</p>
-        </div>
-        <div>
-          <p class="mt-3 max-w-2xl leading-7 text-slate-400">Soluciones web full-stack con React y Next.js, desde requisitos y arquitectura hasta deploy, además de prototipos multijugador en Unreal Engine.</p>
-        </div>
-      </article>
+      </div>
     </div>
   </section>
 
@@ -223,13 +236,40 @@ const services = [
 </script>
 
 <script>
+  const featuredTrack = document.querySelector<HTMLElement>('[data-featured-track]');
+  const featuredCarousel = document.querySelector<HTMLElement>('[data-featured-carousel]');
+  const featuredSlides = featuredTrack ? [...featuredTrack.querySelectorAll<HTMLElement>(':scope > article')] : [];
+  const featuredIndicator = document.querySelector<HTMLElement>('[data-featured-indicator]');
+  let featuredIndex = 0;
+  let featuredDragStart = 0;
+
+  const renderFeatured = (index: number) => {
+    if (!featuredTrack || !featuredSlides.length) return;
+    featuredIndex = (index + featuredSlides.length) % featuredSlides.length;
+    featuredTrack.style.transform = `translate3d(-${featuredSlides[featuredIndex].offsetLeft}px, 0, 0)`;
+    if (featuredIndicator) featuredIndicator.textContent = `${String(featuredIndex + 1).padStart(2, '0')} / ${String(featuredSlides.length).padStart(2, '0')}`;
+  };
+
+  document.querySelector('[data-featured-prev]')?.addEventListener('click', () => renderFeatured(featuredIndex - 1));
+  document.querySelector('[data-featured-next]')?.addEventListener('click', () => renderFeatured(featuredIndex + 1));
+  featuredCarousel?.addEventListener('pointerdown', (event) => { featuredDragStart = event.clientX; });
+  featuredCarousel?.addEventListener('pointerup', (event) => {
+    const distance = event.clientX - featuredDragStart;
+    if (Math.abs(distance) > 50) renderFeatured(featuredIndex + (distance < 0 ? 1 : -1));
+  });
+  window.addEventListener('resize', () => renderFeatured(featuredIndex));
+  renderFeatured(0);
+</script>
+
+<script>
   const tetrisCanvas = document.querySelector<HTMLCanvasElement>('.tetris-canvas');
   const tetrisContext = tetrisCanvas?.getContext('2d');
-  const bridgeCanvas = document.querySelector<HTMLCanvasElement>('.tetris-bridge-canvas');
-  const bridgeContext = bridgeCanvas?.getContext('2d');
-  const boardWidth = 24;
+  const bridgeCanvases = [...document.querySelectorAll<HTMLCanvasElement>('.tetris-bridge-canvas')];
+  const bridgeContexts = bridgeCanvases.map((canvas) => canvas.getContext('2d'));
+  const contactButton = document.querySelector<HTMLElement>('#contact-button');
+  const boardWidth = 16;
   const boardHeight = 6;
-  const cellWidth = 50;
+  const cellWidth = 60;
   const rowHeight = 44;
   const fallSpeed = 2.4;
   const pieces = [
@@ -252,6 +292,43 @@ const services = [
   let impactTime = 0;
   let impactCells: Array<[number, number]> = [];
   let bridgeOffset = 0;
+  let lastLockedColor = '#F1EEE6';
+  let boardPushCount = 0;
+  let buttonCooldown = 0;
+  let pendingButtonColor: string | null = null;
+  let renderCellWidth = 50;
+  let renderRowHeight = 44;
+  let bridgeRenderRowHeight = 44;
+  let renderOffsetX = 0;
+
+  const resizeCanvases = () => {
+    if (!tetrisCanvas || !tetrisContext) return;
+    const dpr = window.devicePixelRatio || 1;
+    const rect = tetrisCanvas.getBoundingClientRect();
+    tetrisCanvas.width = Math.max(1, Math.floor(rect.width * dpr));
+    tetrisCanvas.height = Math.max(1, Math.floor(rect.height * dpr));
+    tetrisContext.setTransform(dpr, 0, 0, dpr, 0, 0);
+    renderCellWidth = Math.min(50, rect.width / boardWidth);
+    renderRowHeight = Math.min(44, rect.height / boardHeight);
+    renderOffsetX = Math.max(0, (rect.width - renderCellWidth * boardWidth) / 2);
+    bridgeCanvases.forEach((canvas, index) => {
+      const context = bridgeContexts[index];
+      if (!context) return;
+      const bridgeRect = canvas.getBoundingClientRect();
+      canvas.width = Math.max(1, Math.floor(bridgeRect.width * dpr));
+      canvas.height = Math.max(1, Math.floor(bridgeRect.height * dpr));
+      context.setTransform(dpr, 0, 0, dpr, 0, 0);
+      bridgeRenderRowHeight = bridgeRect.height / 3;
+    });
+    drawTetris();
+    drawBridge();
+  };
+
+  const updateButtonColor = (color: string) => {
+    contactButton?.style.setProperty('--tetris-button-color', color);
+    buttonCooldown = 1.8;
+    pendingButtonColor = null;
+  };
 
   const nextPiece = () => {
     if (!bag.length) bag = [...pieces].sort(() => Math.random() - 0.5);
@@ -282,7 +359,12 @@ const services = [
       const pushedRow = board.pop();
       if (pushedRow) {
         bridgeRows.unshift(pushedRow);
-        bridgeOffset = -rowHeight;
+        bridgeOffset = -bridgeRenderRowHeight;
+        boardPushCount += 1;
+        if (boardPushCount % 3 === 0) {
+          pendingButtonColor = lastLockedColor;
+          if (buttonCooldown <= 0) updateButtonColor(lastLockedColor);
+        }
       }
       bridgeRows.splice(3);
       board.unshift(Array(boardWidth).fill(null));
@@ -290,6 +372,7 @@ const services = [
   };
 
   const lockPiece = () => {
+    lastLockedColor = activePiece.color;
     activePiece.cells.forEach(([dx, dy]) => {
       const y = Math.floor(activeY + dy);
       if (y >= 0) {
@@ -308,11 +391,11 @@ const services = [
     spawnPiece();
   };
 
-  const drawBlockOn = (context: CanvasRenderingContext2D, x: number, y: number, color: string, offsetY = 0) => {
-    const px = x * cellWidth;
-    const py = y * rowHeight + offsetY;
+  const drawBlockOn = (context: CanvasRenderingContext2D, x: number, y: number, color: string, offsetY = 0, blockRowHeight = renderRowHeight) => {
+    const px = renderOffsetX + x * renderCellWidth;
+    const py = y * blockRowHeight + offsetY;
     context.fillStyle = color;
-    context.fillRect(px, py, cellWidth, rowHeight);
+    context.fillRect(px, py, renderCellWidth, blockRowHeight);
   };
 
   const drawBlock = (x: number, y: number, color: string, offsetY = 0) => {
@@ -335,15 +418,20 @@ const services = [
   };
 
   const drawBridge = () => {
-    if (!bridgeContext || !bridgeCanvas) return;
-    bridgeContext.clearRect(0, 0, bridgeCanvas.width, bridgeCanvas.height);
-    bridgeRows.forEach((row, y) => row.forEach((color, x) => color && drawBlockOn(bridgeContext, x, y, color, bridgeOffset)));
+    bridgeContexts.forEach((context, index) => {
+      const canvas = bridgeCanvases[index];
+      if (!context || !canvas) return;
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      bridgeRows.forEach((row, y) => row.forEach((color, x) => color && drawBlockOn(context, x, Math.max(0, 3 - bridgeRows.length + y), color, bridgeOffset, bridgeRenderRowHeight)));
+    });
   };
 
   const tick = (time: number) => {
     const delta = lastTime ? Math.min((time - lastTime) / 1000, 0.05) : 0;
     lastTime = time;
     impactTime = Math.max(0, impactTime - delta);
+    buttonCooldown = Math.max(0, buttonCooldown - delta);
+    if (buttonCooldown === 0 && pendingButtonColor) updateButtonColor(pendingButtonColor);
     bridgeOffset += (0 - bridgeOffset) * Math.min(delta * 9, 1);
     const nextY = activeY + delta * fallSpeed;
     const landingY = Math.floor(activeY);
@@ -360,9 +448,12 @@ const services = [
   };
 
   if (tetrisCanvas && tetrisContext) {
+    window.addEventListener('resize', resizeCanvases);
+    resizeCanvases();
     spawnPiece();
     drawTetris();
     drawBridge();
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) window.requestAnimationFrame(tick);
   }
+
 </script>
