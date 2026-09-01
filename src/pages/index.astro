@@ -7,6 +7,7 @@ const projects = [
   {
     title: 'CodeClub',
     source: 'Proyecto personal',
+    story: 'CodeClub nació de una curiosidad personal: quería construir una herramienta de código abierta, local-first y realmente útil. Disfruté explorar cómo la IA, el terminal y la evidencia de cada ejecución podían convivir en un mismo producto.',
     description: 'Diseñé y construí un IDE de escritorio open source y local-first para desarrollar aplicaciones con agentes de IA, terminal, navegador y evidencia auditable de cada ejecución.',
     tags: ['Tauri', 'React', 'Rust', 'TypeScript', 'IA'],
     image: '/images/projects/Codeclub windowspc.png',
@@ -14,6 +15,7 @@ const projects = [
   {
     title: 'Socios del Negocio',
     source: 'Matecore',
+    story: 'Trabajar en este proyecto para Gustavo Mosquera me permitió combinar desarrollo con marketing de performance. Me involucré en una experiencia pensada para convertir atención en cursos, pagos y relaciones reales con clientes.',
     description: 'Construí una plataforma de marketing digital y cursos con landing pages de alta conversión, cupones, pagos con Stripe, CRM y experimentos A/B en Edge Middleware.',
     tags: ['Next.js', 'Stripe', 'GHL', 'GSAP'],
     image: '/images/projects/sociosnueva.png',
@@ -21,6 +23,7 @@ const projects = [
   {
     title: 'TurnoCore',
     source: 'Matecore',
+    story: 'TurnoCore fue una propuesta de Matecore para resolver la gestión de turnos de punta a punta. Me gustó trabajar sobre un problema cotidiano y convertirlo en un sistema con booking público, panel privado y pagos.',
     description: 'Diseñé y desarrollé un SaaS multi-tenant de gestión de turnos con booking público, dashboard privado y marketplace de pagos con Mercado Pago.',
     tags: ['Next.js', 'Supabase', 'Prisma', 'Mercado Pago'],
     image: '/images/projects/turnocorenueva.png',
@@ -28,6 +31,7 @@ const projects = [
   {
     title: 'JAM',
     source: 'Matecore',
+    story: 'JAM me llevó a construir una experiencia para una competencia de baile con alcance nacional e internacional. Disfruté el desafío de combinar una presentación visual intensa con autenticación y un dashboard para competidores.',
     description: 'Diseñé y desarrollé una experiencia promocional fullscreen con slider cinematográfico, autenticación y dashboard de competidor.',
     tags: ['Next.js', 'GSAP', 'Better Auth', 'PostgreSQL'],
     image: '/images/projects/jamnueva.png',
@@ -35,6 +39,7 @@ const projects = [
   {
     title: 'Bewell Esthetic Miami',
     source: 'Matecore',
+    story: 'En Bewell Esthetic Miami participé en los funnels, el desarrollo y la recuperación de la página. Fue un proyecto donde pude unir producto, experiencia de marca, captación de leads y booking en una solución bilingüe.',
     description: 'Construí un sitio premium bilingüe para una clínica estética, con funnels de captación, booking online, leads automatizados y una experiencia de marca animada.',
     tags: ['Next.js', 'i18n', 'Calendly', 'GoHighLevel'],
     image: '/images/projects/bewellnueva.png',
@@ -79,7 +84,10 @@ const services = [
           </h1>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300">Soy Ignacio Angelone. Trabajo de forma autónoma desde la primera conversación hasta producción: ordeno el problema, tomo decisiones de arquitectura y convierto necesidades reales en software claro, útil y mantenible.</p>
           <div class="mt-9 flex flex-wrap gap-4">
-            <a id="contact-button" href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20con%20vos." target="_blank" rel="noreferrer" class="tetris-accent-button inline-flex h-14 items-center justify-center px-5 font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(241,238,230,0.08)] active:scale-[0.98]">Hablemos</a>
+            <div class="contact-button-wrap">
+              <a id="contact-button" href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20con%20vos." target="_blank" rel="noreferrer" aria-describedby="contact-tooltip" class="tetris-accent-button inline-flex h-14 items-center justify-center px-5 font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(241,238,230,0.08)] active:scale-[0.98]">Hablemos</a>
+              <span id="contact-tooltip" class="contact-tooltip" role="tooltip"><strong>Hablemos</strong><small>Escribime por WhatsApp y contame qué querés construir.</small></span>
+            </div>
             <a href="#proyectos" class="group inline-flex h-14 items-center justify-center gap-2 px-1 font-semibold text-slate-300 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:text-white active:scale-[0.98]">
               Ver proyectos
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>

@@ -12,10 +12,15 @@ const whatsappMessages: Record<string, string> = {
   '02': 'Hola Ignacio, vi tu portafolio y me gustaría conversar sobre soluciones de IA y automatización.',
   '03': 'Hola Ignacio, vi tu portafolio y me gustaría conversar sobre una oportunidad para sumarte a nuestro equipo.',
 };
+const serviceDetails: Record<string, string> = {
+  '01': 'Desarrollo e integro CRM, dashboards y automatizaciones para ordenar ventas, stock y operaciones. La idea es que el equipo tenga mejor información y pueda tomar decisiones concretas sin depender de tareas manuales.',
+  '02': 'Diseño agentes y automatizaciones de IA para reducir tareas repetitivas, conectar herramientas y convertir procesos dispersos en flujos de trabajo más rápidos, claros y fáciles de mantener.',
+  '03': 'Me incorporo a tu equipo para transformar una idea o necesidad en un producto real: relevamiento, arquitectura, desarrollo, integraciones, deploy y acompañamiento técnico.',
+};
 const whatsappUrl = `https://wa.me/5491122867368?text=${encodeURIComponent(whatsappMessages[number] ?? `Hola Ignacio, vi tu portafolio y me gustaría conversar sobre ${title}.`)}`;
 ---
 
-<a data-service-card href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={`Consultar por ${title}`} class="group relative isolate block overflow-hidden border-b border-ink-500 py-6 outline-none sm:py-8">
+<a data-service-card href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={`Consultar por ${title}`} class="group relative isolate block border-b border-ink-500 py-6 outline-none sm:py-8">
   <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 z-0 w-1/2 opacity-0 transition-opacity duration-700 ease-out">
     <div class={`service-tetris-art service-tetris-art-${number}`}>
       <span></span><span></span><span></span><span></span><span></span><span></span>
@@ -30,6 +35,7 @@ const whatsappUrl = `https://wa.me/5491122867368?text=${encodeURIComponent(whats
       <p class="mt-2 max-w-md text-sm leading-6 text-slate-300">{description}</p>
     </div>
   </div>
+  <span class="service-tooltip" role="tooltip"><strong>{title}</strong><small>{serviceDetails[number]}</small></span>
 </a>
 
 <script>

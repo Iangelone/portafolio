@@ -26,17 +26,26 @@ const sections = [
 
 <script>
   const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-section-link]')];
+  let announcementTimer: number | undefined;
   const targets = links
     .map((link) => document.getElementById(link.dataset.sectionLink ?? ''))
     .filter((target): target is HTMLElement => Boolean(target));
 
   const setActive = (id: string) => {
+    if (announcementTimer) window.clearTimeout(announcementTimer);
     links.forEach((link) => {
       const active = link.dataset.sectionLink === id;
       link.classList.toggle('is-active', active);
+      link.classList.remove('is-announced');
       if (active) link.setAttribute('aria-current', 'true');
       else link.removeAttribute('aria-current');
     });
+
+    const activeLink = links.find((link) => link.dataset.sectionLink === id);
+    activeLink?.classList.add('is-announced');
+    announcementTimer = window.setTimeout(() => {
+      activeLink?.classList.remove('is-announced');
+    }, 3200);
   };
 
   if (targets.length) {
