@@ -1,0 +1,55 @@
+---
+const sections = [
+  { id: 'inicio', label: 'Inicio', description: 'Presentación y propuesta' },
+  { id: 'servicios', label: 'Servicios', description: 'Cómo puedo ayudarte' },
+  { id: 'proyectos', label: 'Proyectos', description: 'Productos que construí' },
+  { id: 'sobre-mi', label: 'Sobre mí', description: 'Recorrido y experiencia' },
+];
+---
+
+<nav class="section-rail" aria-label="Secciones de la página">
+  <div class="section-rail__items">
+    {sections.map((section, index) => (
+      <a
+        class:list={['section-rail__link', index === 0 && 'is-active']}
+        href={`#${section.id}`}
+        data-section-link={section.id}
+        aria-label={`Ir a ${section.label}`}
+        aria-current={index === 0 ? 'true' : undefined}
+      >
+        <span class="section-rail__line" aria-hidden="true"></span>
+        <span class="section-rail__tooltip" role="tooltip"><strong>{section.label}</strong><small>{section.description}</small></span>
+      </a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-section-link]')];
+  const targets = links
+    .map((link) => document.getElementById(link.dataset.sectionLink ?? ''))
+    .filter((target): target is HTMLElement => Boolean(target));
+
+  const setActive = (id: string) => {
+    links.forEach((link) => {
+      const active = link.dataset.sectionLink === id;
+      link.classList.toggle('is-active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  if (targets.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+      },
+      { rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.2, 0.5, 1] },
+    );
+
+    targets.forEach((target) => observer.observe(target));
+  }
+</script>

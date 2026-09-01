@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SectionRail from '../components/SectionRail.astro';
 
 interface Props {
   title?: string;
@@ -19,5 +20,6 @@ const { title = 'Portafolio', description = 'Portafolio personal y proyectos sel
   </head>
   <body class="bg-black text-slate-100 antialiased">
     <main><slot /></main>
+    <SectionRail />
   </body>
 </html>

@@ -94,7 +94,7 @@ const services = [
     <canvas class="tetris-bridge-canvas" width="1200" height="132"></canvas>
   </section>
 
-  <section data-service-section class="mx-auto max-w-6xl bg-black px-6 pb-8 pt-20 sm:pt-28">
+  <section id="servicios" data-service-section class="mx-auto max-w-6xl bg-black px-6 pb-8 pt-20 sm:pt-28">
     <div><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">¿En qué puedo ayudarte?</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Cuando una idea necesita convertirse en un producto confiable.</h2></div>
     <div class="mt-10">{services.map((service) => <ServiceCard {...service} />)}</div>
   </section>

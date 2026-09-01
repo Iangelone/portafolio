@@ -112,6 +112,108 @@ body {
   font-family: var(--font-sans);
 }
 
+.section-rail {
+  position: fixed;
+  top: 50%;
+  right: 17px;
+  z-index: 40;
+  transform: translateY(-50%);
+}
+
+.section-rail__items {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  align-items: flex-end;
+}
+
+.section-rail__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 28px;
+  height: 7px;
+  padding: 3px 0;
+  outline: none;
+}
+
+.section-rail__line {
+  display: block;
+  width: 8px;
+  height: 2px;
+  background: rgba(241, 238, 230, 0.24);
+  transition: width 260ms var(--ease-spring), background-color 260ms ease, transform 260ms var(--ease-spring);
+}
+
+.section-rail__link:hover .section-rail__line,
+.section-rail__link:focus-visible .section-rail__line,
+.section-rail__link.is-active .section-rail__line {
+  width: 20px;
+  background: #F1EEE6;
+}
+
+.section-rail__link:hover .section-rail__line,
+.section-rail__link:focus-visible .section-rail__line {
+  transform: scaleY(1.5);
+}
+
+.section-rail__tooltip {
+  position: absolute;
+  right: 31px;
+  top: 50%;
+  width: 184px;
+  padding: 8px 11px;
+  border: 1px solid rgba(241, 238, 230, 0.12);
+  border-radius: 10px;
+  background: rgba(36, 36, 36, 0.94);
+  color: #F1EEE6;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(5px, -50%);
+  transition: opacity 180ms ease, transform 260ms var(--ease-spring);
+}
+
+.section-rail__tooltip strong,
+.section-rail__tooltip small {
+  display: block;
+}
+
+.section-rail__tooltip small {
+  margin-top: 3px;
+  color: rgba(241, 238, 230, 0.58);
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.section-rail__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid rgba(241, 238, 230, 0.12);
+  border-right: 1px solid rgba(241, 238, 230, 0.12);
+  background: rgba(36, 36, 36, 0.94);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.section-rail__link:hover .section-rail__tooltip,
+.section-rail__link:focus-visible .section-rail__tooltip {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-rail__line,
+  .section-rail__tooltip { transition: none; }
+}
+
 .tetris-accent-button {
   background-color: transparent;
   border: 2px solid var(--tetris-button-color, #F1EEE6);
