@@ -315,6 +315,11 @@ body {
   transform: translate(0, -50%);
 }
 
+body:has([data-service-card]:hover, [data-service-card]:focus-visible, .project-preview:hover, .project-preview:focus-visible, #contact-button:hover, #contact-button:focus-visible) .section-rail__tooltip {
+  visibility: hidden;
+  opacity: 0 !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .section-rail__line,
   .section-rail__tooltip,
