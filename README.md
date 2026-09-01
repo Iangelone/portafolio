@@ -20,17 +20,17 @@ No me interesa sumar complejidad porque sí. Prefiero soluciones simples de mant
 
 ## Experiencia
 
-### Desarrollador de Software · Matecore
+### Desarrollador de Software · Matecore (Contractor)
 
 `oct. 2024 — actualidad` · Remoto
 
 Trabajo en productos SaaS multi-tenant, pagos, agentes de IA, automatizaciones CRM y testing E2E. Implementé soluciones que generaron más de **$16K USD para un cliente**.
 
-### Desarrollador Full-Stack Independiente
+### Desarrollador de Software Independiente (Contractor)
 
-`ago. 2023 — jul. 2024` · Remoto
+`ago. 2023 — actualidad` · Remoto
 
-Desarrollé soluciones web full-stack con React y Next.js, participando desde los requisitos y la arquitectura hasta el deploy. También trabajé en prototipos multijugador con Unreal Engine.
+Construyo productos y soluciones end-to-end, participando desde los requisitos y la arquitectura hasta el deploy. CodeClub es un ejemplo de ownership técnico y de producto. También trabajé en prototipos multijugador con Unreal Engine.
 
 ## Proyectos destacados
 
