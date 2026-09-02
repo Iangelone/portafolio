@@ -12,11 +12,6 @@ const whatsappMessages: Record<string, string> = {
   '02': 'Hola Ignacio, vi tu portafolio y me gustaría conversar sobre soluciones de IA y automatización.',
   '03': 'Hola Ignacio, vi tu portafolio y me gustaría conversar sobre una oportunidad para sumarte a nuestro equipo.',
 };
-const serviceDetails: Record<string, string> = {
-  '01': 'Desarrollo e integro CRM, dashboards y automatizaciones para ordenar ventas, stock y operaciones. La idea es que el equipo tenga mejor información y pueda tomar decisiones concretas sin depender de tareas manuales.',
-  '02': 'Diseño agentes y automatizaciones de IA para reducir tareas repetitivas, conectar herramientas y convertir procesos dispersos en flujos de trabajo más rápidos, claros y fáciles de mantener.',
-  '03': 'Me incorporo a tu equipo para transformar una idea o necesidad en un producto real: relevamiento, arquitectura, desarrollo, integraciones, deploy y acompañamiento técnico.',
-};
 const whatsappUrl = `https://wa.me/5491122867368?text=${encodeURIComponent(whatsappMessages[number] ?? `Hola Ignacio, vi tu portafolio y me gustaría conversar sobre ${title}.`)}`;
 ---
 
@@ -35,7 +30,6 @@ const whatsappUrl = `https://wa.me/5491122867368?text=${encodeURIComponent(whats
       <p class="mt-2 max-w-md text-sm leading-6 text-slate-300">{description}</p>
     </div>
   </div>
-  <span class="service-tooltip" role="tooltip"><strong>{title}</strong><small>{serviceDetails[number]}</small></span>
 </a>
 
 <script>
@@ -71,4 +65,5 @@ const whatsappUrl = `https://wa.me/5491122867368?text=${encodeURIComponent(whats
     }, { threshold: 0.2 });
     observer.observe(section);
   }
+
 </script>

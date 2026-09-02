@@ -5,6 +5,14 @@ import ServiceCard from '../components/ServiceCard.astro';
 
 const projects = [
   {
+    title: 'Andavia Tours',
+    source: 'Proyecto independiente',
+    story: 'Andavia me permitió construir una experiencia digital para descubrir Mendoza desde otro lugar: una navegación inmersiva, narrativa y pensada para convertir inspiración en consultas reales.',
+    description: 'Diseñé y desarrollé una experiencia web multilingüe para tours en Mendoza, con recorridos de alta montaña, bodegas, traslados, contenido editorial y consultas directas por WhatsApp.',
+    tags: ['Next.js', 'React', 'next-intl', 'Motion', 'Vercel'],
+    image: '/images/projects/andavia.png',
+  },
+  {
     title: 'CodeClub',
     source: 'Proyecto personal',
     story: 'CodeClub nació de una curiosidad personal: quería construir una herramienta de código abierta, local-first y realmente útil. Disfruté explorar cómo la IA, el terminal y la evidencia de cada ejecución podían convivir en un mismo producto.',
@@ -53,7 +61,7 @@ const services = [
 ];
 ---
 
-<BaseLayout title="Ignacio Angelone · Full-Stack Software Developer" description="Desarrollador Full-Stack especializado en productos web, desktop, IA y automatizaciones de negocio.">
+<BaseLayout title="Ignacio Angelone · Desarrollador de Software e IA aplicada" description="Desarrollo de software a medida para PYMES: sistemas web, automatizaciones, dashboards y soluciones de IA para empresas de Latinoamérica.">
   <section id="inicio" class="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-ink-500 bg-black">
     <div class="flex flex-1 flex-col overflow-hidden bg-black">
         <div class="relative h-[25svh] min-h-[180px] max-h-[280px] shrink-0 overflow-hidden border-b border-white/20 bg-black">
@@ -85,9 +93,14 @@ const services = [
           <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300">Soy Ignacio Angelone. Trabajo de forma autónoma desde la primera conversación hasta producción: ordeno el problema, tomo decisiones de arquitectura y convierto necesidades reales en software claro, útil y mantenible.</p>
           <div class="mt-9 flex flex-wrap gap-4">
             <div class="contact-button-wrap">
-              <a id="contact-button" href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20con%20vos." target="_blank" rel="noreferrer" aria-describedby="contact-tooltip" class="tetris-accent-button inline-flex h-14 items-center justify-center px-5 font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(241,238,230,0.08)] active:scale-[0.98]">Hablemos</a>
-              <span id="contact-tooltip" class="contact-tooltip" role="tooltip"><strong>Hablemos</strong><small>Escribime por WhatsApp y contame qué querés construir.</small></span>
+              <a id="contact-button" href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20con%20vos." target="_blank" rel="noreferrer" class="tetris-accent-button inline-flex h-14 items-center justify-center px-5 font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(241,238,230,0.08)] active:scale-[0.98]">Hablemos</a>
             </div>
+            <a href="https://www.linkedin.com/in/ignacioangelone/" target="_blank" rel="noreferrer" aria-label="LinkedIn de Ignacio Angelone" class="inline-flex h-14 w-10 items-center justify-center text-slate-300 transition-colors hover:text-white" title="LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.57V9H3.56v11.45Z" /></svg>
+            </a>
+            <a href="https://github.com/Iangelone" target="_blank" rel="noreferrer" aria-label="GitHub de Ignacio Angelone" class="inline-flex h-14 w-10 items-center justify-center text-slate-300 transition-colors hover:text-white" title="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2.18c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.57-.29-5.27-1.29-5.27-5.73 0-1.27.45-2.3 1.2-3.1-.12-.3-.52-1.47.12-3.06 0 0 .98-.31 3.16 1.18a10.96 10.96 0 0 1 5.76 0c2.18-1.49 3.16-1.18 3.16-1.18.64 1.59.24 2.76.12 3.06.75.8 1.2 1.83 1.2 3.1 0 4.45-2.7 5.44-5.28 5.73.42.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" /></svg>
+            </a>
             <a href="#proyectos" class="group inline-flex h-14 items-center justify-center gap-2 px-1 font-semibold text-slate-300 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:text-white active:scale-[0.98]">
               Ver proyectos
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5 transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
@@ -102,8 +115,17 @@ const services = [
     <canvas class="tetris-bridge-canvas" width="1200" height="132"></canvas>
   </section>
 
+  <section id="pymes" class="mx-auto max-w-6xl border-b border-white/10 bg-black px-6 pb-20 pt-20 scroll-mt-8 sm:pb-24 sm:pt-28">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Desarrollo para PYMES</p>
+      <h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Software a medida para ordenar y hacer crecer tu negocio.</h2>
+      <p class="mt-6 text-lg leading-8 text-slate-300">Construyo sistemas web, dashboards, automatizaciones e integraciones para pequeñas y medianas empresas de Latinoamérica. Desde una necesidad puntual hasta una solución completa, te acompaño del relevamiento a producción.</p>
+      <a href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vi%20tu%20secci%C3%B3n%20de%20desarrollo%20para%20PYMES%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20mi%20proyecto." target="_blank" rel="noreferrer" aria-label="Hablar sobre un proyecto para PYMES por WhatsApp" class="tetris-accent-button mt-8 inline-flex h-14 items-center justify-center px-5 font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(241,238,230,0.08)] active:scale-[0.98]">Hablemos de tu proyecto</a>
+    </div>
+  </section>
+
   <section id="servicios" data-service-section class="mx-auto max-w-6xl bg-black px-6 pb-8 pt-20 sm:pt-28">
-    <div><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">¿En qué puedo ayudarte?</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Cuando una idea necesita convertirse en un producto confiable.</h2></div>
+    <div><p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">¿En qué puedo ayudarte?</p><h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Desarrollo de software para PYMES y equipos que necesitan avanzar.</h2></div>
     <div class="mt-10">{services.map((service) => <ServiceCard {...service} />)}</div>
   </section>
 
@@ -149,7 +171,7 @@ const services = [
         </div>
         <div class="mt-8 divide-y divide-white/10">
           <article class="grid gap-3 py-6 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-8">
-            <div><h3 class="text-xl font-semibold text-white">Desarrollador de Software · Matecore <span class="text-accent-cream">(Contractor)</span></h3><p class="mt-2 leading-7 text-slate-400">Desde octubre de 2024 diseño y desarrollo productos SaaS multi-tenant completos: modelo de datos, permisos con RLS, marketplaces de pagos, automatizaciones CRM y dashboards. Participo en las decisiones desde el problema hasta producción.</p><div class="mt-4 flex flex-wrap gap-2"><span class="experience-tag">TypeScript</span><span class="experience-tag">Next.js</span><span class="experience-tag">PostgreSQL</span><span class="experience-tag">Supabase</span><span class="experience-tag">Prisma</span><span class="experience-tag">OpenAI</span><span class="experience-tag">Vercel AI SDK</span><span class="experience-tag">Playwright</span></div></div>
+            <div><h3 class="text-xl font-semibold text-white">Desarrollador de Software · Matecore <span class="text-accent-cream">(Contractor)</span></h3><p class="mt-2 leading-7 text-slate-400">Desde octubre de 2024 diseño y desarrollo productos SaaS multi-tenant y soluciones para PYMES: modelo de datos, permisos con RLS, marketplaces de pagos, automatizaciones CRM y dashboards. Participo en las decisiones desde el problema hasta producción.</p><div class="mt-4 flex flex-wrap gap-2"><span class="experience-tag">TypeScript</span><span class="experience-tag">Next.js</span><span class="experience-tag">PostgreSQL</span><span class="experience-tag">Supabase</span><span class="experience-tag">Prisma</span><span class="experience-tag">OpenAI</span><span class="experience-tag">Vercel AI SDK</span><span class="experience-tag">Playwright</span></div></div>
             <p class="text-sm text-slate-500 sm:text-right">oct. 2024 — actualidad<br />Remoto</p>
           </article>
           <article class="grid gap-3 py-6 sm:grid-cols-[1fr_auto] sm:gap-8">
@@ -168,6 +190,42 @@ const services = [
       </div>
     </div>
   </section>
+
+  <section id="preguntas" class="mx-auto max-w-6xl border-b border-white/10 bg-black px-6 pb-24 pt-20 scroll-mt-8 sm:pt-28">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Preguntas frecuentes</p>
+      <h2 class="mt-4 text-3xl font-semibold tracking-tight">Antes de empezar un proyecto.</h2>
+      <div class="mt-10 divide-y divide-white/10 border-t border-white/15">
+        <article class="py-6">
+          <h3 class="text-lg font-semibold text-white">¿Qué tipo de desarrollos realizás?</h3>
+          <p class="mt-2 leading-7 text-slate-300">Desarrollo de software a medida para PYMES: sistemas web, dashboards, CRM, automatizaciones, integraciones y productos con IA.</p>
+        </article>
+        <article class="py-6">
+          <h3 class="text-lg font-semibold text-white">¿Trabajás con empresas de Latinoamérica?</h3>
+          <p class="mt-2 leading-7 text-slate-300">Sí. Trabajo de forma remota con empresas y equipos de Latinoamérica, coordinando relevamiento, desarrollo, deploy y acompañamiento.</p>
+        </article>
+        <article class="py-6">
+          <h3 class="text-lg font-semibold text-white">¿Podés sumarte a un proyecto existente?</h3>
+          <p class="mt-2 leading-7 text-slate-300">Sí. Puedo incorporarme a un equipo o producto existente para resolver una necesidad puntual, ordenar la arquitectura o desarrollar nuevas funcionalidades.</p>
+        </article>
+        <article class="py-6">
+          <h3 class="text-lg font-semibold text-white">¿Cómo es el primer paso?</h3>
+          <p class="mt-2 leading-7 text-slate-300">Me contás qué necesitás resolver y revisamos el contexto, el alcance y la mejor forma de llevarlo a producción.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: '¿Qué tipo de desarrollos realizás?', acceptedAnswer: { '@type': 'Answer', text: 'Desarrollo de software a medida para PYMES: sistemas web, dashboards, CRM, automatizaciones, integraciones y productos con IA.' } },
+      { '@type': 'Question', name: '¿Trabajás con empresas de Latinoamérica?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Trabajo de forma remota con empresas y equipos de Latinoamérica, coordinando relevamiento, desarrollo, deploy y acompañamiento.' } },
+      { '@type': 'Question', name: '¿Podés sumarte a un proyecto existente?', acceptedAnswer: { '@type': 'Answer', text: 'Sí. Puedo incorporarme a un equipo o producto existente para resolver una necesidad puntual, ordenar la arquitectura o desarrollar nuevas funcionalidades.' } },
+      { '@type': 'Question', name: '¿Cómo es el primer paso?', acceptedAnswer: { '@type': 'Answer', text: 'Me contás qué necesitás resolver y revisamos el contexto, el alcance y la mejor forma de llevarlo a producción.' } },
+    ],
+  })} />
 
   <dialog id="project-modal" class="m-auto w-[min(94vw,1200px)] max-w-none border-0 bg-transparent p-0 text-white backdrop:bg-black/85 backdrop:backdrop-blur-sm">
     <div class="relative flex max-h-[92vh] flex-col">
@@ -193,7 +251,6 @@ const services = [
   const previews = Array.from(document.querySelectorAll<HTMLButtonElement>('.project-preview'));
   let currentIndex = 0;
   let autoplay: number | undefined;
-
   const renderProject = (index: number) => {
     currentIndex = (index + previews.length) % previews.length;
     const preview = previews[currentIndex];

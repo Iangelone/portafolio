@@ -36,7 +36,6 @@ const tagColor = softTagColors[index % softTagColors.length];
         <button type="button" class="project-preview relative z-10 block w-full cursor-pointer overflow-hidden rounded-[1.75rem] border border-white/25 bg-black/20 text-left transition-colors duration-500 hover:border-white/60" data-project-image={image} data-project-title={title} data-project-source={source} aria-label={`Ver imágenes de ${title}`}>
           <img src={image} alt={`Captura de ${title}`} class="block h-auto w-full" />
         </button>
-        <span class="project-tooltip" role="tooltip"><strong>{title}</strong><small>{story}</small></span>
       </>
     ) : (
       <div class="flex min-h-[280px] items-end bg-[radial-gradient(circle_at_70%_20%,#412D15_0%,#1F150C_38%,#121212_100%)] p-8">

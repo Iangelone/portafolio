@@ -38,6 +38,7 @@ El portfolio incluye proyectos personales y trabajos realizados para Matecore, e
 
 | Proyecto | Tipo | Qué resolvía |
 | --- | --- | --- |
+| **Andavia Tours** | Proyecto independiente | Experiencia web multilingüe para tours, bodegas, alta montaña y traslados en Mendoza. |
 | **Concierge** | Proyecto personal | Producto web orientado a reservas y gestión operativa. |
 | **Socios del Negocio** | Matecore | Marketing digital, cursos, pagos, CRM y experimentos A/B. |
 | **CodeClubIDE** | Proyecto personal | Entorno y herramientas para aprender y trabajar con código. |
