@@ -113,6 +113,43 @@
 .service-tetris-art-03 span:nth-child(11),
 .service-tetris-art-03 span:nth-child(12) { background: #3E8EF7; }
 
+.pymes-tetris-art {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  width: min(34vw, 260px);
+  height: 148px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  opacity: .72;
+  pointer-events: none;
+}
+
+.pymes-tetris-art span { background: transparent; }
+.pymes-tetris-art span:nth-child(1),
+.pymes-tetris-art span:nth-child(2),
+.pymes-tetris-art span:nth-child(3) { background: #21D4C6; }
+.pymes-tetris-art span:nth-child(8),
+.pymes-tetris-art span:nth-child(13),
+.pymes-tetris-art span:nth-child(14) { background: #7B4DE8; }
+.pymes-tetris-art span:nth-child(15),
+.pymes-tetris-art span:nth-child(16),
+.pymes-tetris-art span:nth-child(17),
+.pymes-tetris-art span:nth-child(18) { background: #C6E51B; }
+.pymes-tetris-art span:nth-child(19),
+.pymes-tetris-art span:nth-child(20) { background: #FF9D32; }
+
+@media (max-width: 639px) {
+  .pymes-tetris-art {
+    right: -12px;
+    bottom: -18px;
+    width: 120px;
+    height: 96px;
+    opacity: .48;
+  }
+}
+
 body {
   font-family: var(--font-sans);
 }
@@ -259,6 +296,19 @@ h3 {
   background: #0B0B0B;
 }
 
+@media (max-width: 639px) {
+  .hero-tetris-frame {
+    height: 37.5vw;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .tetris-bridge {
+    height: 18.75vw;
+    min-height: 0;
+  }
+}
+
 .tetris-bridge::after {
   position: absolute;
   inset: 0;
@@ -267,7 +317,7 @@ h3 {
   content: '';
   background:
     linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.88) 14%, transparent 38%, transparent 62%, rgba(0, 0, 0, 0.88) 86%, #000000 100%),
-    linear-gradient(180deg, #000000 0%, transparent 24%, transparent 76%, #000000 100%);
+    linear-gradient(180deg, #000000 0%, transparent 24%, transparent 100%);
 }
 
 .tetris-bridge-canvas {
@@ -323,7 +373,7 @@ h3 {
   content: '';
   background:
     linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.52) 14%, transparent 34%, transparent 66%, rgba(0, 0, 0, 0.52) 86%, #000000 100%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, transparent 28%, transparent 72%, rgba(0, 0, 0, 0.32) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, transparent 28%, transparent 100%);
 }
 
 .isometric-grid {

@@ -64,11 +64,10 @@ const services = [
 <BaseLayout title="Ignacio Angelone · Desarrollador de Software e IA aplicada" description="Desarrollo de software a medida para PYMES: sistemas web, automatizaciones, dashboards y soluciones de IA para empresas de Latinoamérica.">
   <section id="inicio" class="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-ink-500 bg-black">
     <div class="flex flex-1 flex-col overflow-hidden bg-black">
-        <div class="relative h-[25svh] min-h-[180px] max-h-[280px] shrink-0 overflow-hidden border-b border-white/20 bg-black">
+        <div class="hero-tetris-frame relative h-[25svh] min-h-[180px] max-h-[280px] shrink-0 overflow-hidden border-b border-white/20 bg-black">
             <div class="isometric-stage" role="img" aria-label="Tetris animado">
             <canvas class="tetris-canvas" width="1200" height="280" role="img" aria-label="Tetris animado"></canvas>
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
       </div>
       <div class="relative mx-auto flex w-full flex-1 flex-col justify-center bg-black max-w-6xl px-6 pb-14 pt-32 sm:px-10 sm:pb-16 sm:pt-36">
         <div class="absolute -top-20 left-6 z-10 h-40 w-40 rounded-full border-4 border-white/75 bg-black p-1 shadow-xl shadow-black/30 sm:left-10 sm:h-44 sm:w-44">
@@ -115,12 +114,15 @@ const services = [
     <canvas class="tetris-bridge-canvas" width="1200" height="132"></canvas>
   </section>
 
-  <section id="pymes" class="mx-auto max-w-6xl border-b border-white/10 bg-black px-6 pb-20 pt-20 scroll-mt-8 sm:pb-24 sm:pt-28">
-    <div class="max-w-3xl">
+  <section id="pymes" class="relative mx-auto max-w-6xl overflow-hidden border-b border-white/10 bg-black px-6 pb-20 pt-20 scroll-mt-8 sm:pb-24 sm:pt-28">
+    <div class="relative z-10 max-w-3xl">
       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">Desarrollo para PYMES</p>
       <h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight">Software a medida para ordenar y hacer crecer tu negocio.</h2>
       <p class="mt-6 text-lg leading-8 text-slate-300">Construyo sistemas web, dashboards, automatizaciones e integraciones para pequeñas y medianas empresas de Latinoamérica. Desde una necesidad puntual hasta una solución completa, te acompaño del relevamiento a producción.</p>
       <a href="https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vi%20tu%20secci%C3%B3n%20de%20desarrollo%20para%20PYMES%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20mi%20proyecto." target="_blank" rel="noreferrer" aria-label="Hablar sobre un proyecto para PYMES por WhatsApp" class="tetris-accent-button mt-8 inline-flex h-14 items-center justify-center px-5 font-semibold transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(241,238,230,0.08)] active:scale-[0.98]">Hablemos de tu proyecto</a>
+    </div>
+    <div class="pymes-tetris-art" aria-hidden="true">
+      {Array.from({ length: 20 }).map(() => <span></span>)}
     </div>
   </section>
 
@@ -153,7 +155,7 @@ const services = [
     <canvas class="tetris-bridge-canvas" width="1200" height="132"></canvas>
   </section>
 
-  <section id="sobre-mi" class="mx-auto max-w-6xl scroll-mt-8 border-y border-white/10 bg-black px-6 pb-32 pt-20 sm:pb-40 sm:pt-28">
+  <section id="sobre-mi" class="mx-auto max-w-6xl scroll-mt-8 border-y border-white/10 bg-black px-6 pb-16 pt-20 sm:pb-24 sm:pt-28">
     <div class="relative overflow-hidden">
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-cream">¿Quién convierte ideas en productos?</p>
@@ -229,10 +231,6 @@ const services = [
 
   <dialog id="project-modal" class="m-auto w-[min(94vw,1200px)] max-w-none border-0 bg-transparent p-0 text-white backdrop:bg-black/85 backdrop:backdrop-blur-sm">
     <div class="relative flex max-h-[92vh] flex-col">
-      <div class="mb-5 flex flex-wrap items-baseline justify-center gap-2">
-        <h2 id="project-modal-title" class="text-2xl font-semibold tracking-tight sm:text-3xl"></h2>
-        <span id="project-modal-source" class="text-sm text-accent-cream sm:text-base"></span>
-      </div>
       <div class="relative flex min-h-[55vh] items-center justify-center overflow-hidden bg-black/20">
         <img id="project-modal-image" src="" alt="" class="max-h-[72vh] w-full select-none object-contain" draggable="false" />
         <button id="project-modal-prev" type="button" class="absolute left-0 top-1/2 flex size-12 -translate-y-1/2 cursor-pointer items-center justify-center text-4xl text-white/80 transition-colors hover:text-white sm:-left-2" aria-label="Proyecto anterior">‹</button>
@@ -246,19 +244,15 @@ const services = [
 <script>
   const modal = document.querySelector<HTMLDialogElement>('#project-modal');
   const modalImage = document.querySelector<HTMLImageElement>('#project-modal-image');
-  const modalTitle = document.querySelector<HTMLElement>('#project-modal-title');
-  const modalSource = document.querySelector<HTMLElement>('#project-modal-source');
   const previews = Array.from(document.querySelectorAll<HTMLButtonElement>('.project-preview'));
   let currentIndex = 0;
   let autoplay: number | undefined;
   const renderProject = (index: number) => {
     currentIndex = (index + previews.length) % previews.length;
     const preview = previews[currentIndex];
-    if (!modalImage || !modalTitle || !modalSource) return;
+    if (!modalImage) return;
     modalImage.src = preview.dataset.projectImage ?? '';
     modalImage.alt = preview.dataset.projectTitle ?? '';
-    modalTitle.textContent = preview.dataset.projectTitle ?? '';
-    modalSource.textContent = `· ${preview.dataset.projectSource ?? ''}`;
     modalImage.classList.remove('project-modal-enter');
     void modalImage.offsetWidth;
     modalImage.classList.add('project-modal-enter');
@@ -365,8 +359,12 @@ const services = [
   let pendingButtonColor: string | null = null;
   let renderCellWidth = 50;
   let renderRowHeight = 44;
+  let bridgeRenderCellWidth = 50;
   let bridgeRenderRowHeight = 44;
   let renderOffsetX = 0;
+  let renderOffsetY = 0;
+  let bridgeRenderOffsetX = 0;
+  let bridgeRenderOffsetY = 0;
 
   const resizeCanvases = () => {
     if (!tetrisCanvas || !tetrisContext) return;
@@ -376,8 +374,9 @@ const services = [
     tetrisCanvas.height = Math.max(1, Math.floor(rect.height * dpr));
     tetrisContext.setTransform(dpr, 0, 0, dpr, 0, 0);
     renderCellWidth = Math.min(50, rect.width / boardWidth);
-    renderRowHeight = Math.min(44, rect.height / boardHeight);
+    renderRowHeight = rect.height / boardHeight;
     renderOffsetX = Math.max(0, (rect.width - renderCellWidth * boardWidth) / 2);
+    renderOffsetY = 0;
     bridgeCanvases.forEach((canvas, index) => {
       const context = bridgeContexts[index];
       if (!context) return;
@@ -385,7 +384,10 @@ const services = [
       canvas.width = Math.max(1, Math.floor(bridgeRect.width * dpr));
       canvas.height = Math.max(1, Math.floor(bridgeRect.height * dpr));
       context.setTransform(dpr, 0, 0, dpr, 0, 0);
+      bridgeRenderCellWidth = Math.min(50, bridgeRect.width / boardWidth);
       bridgeRenderRowHeight = bridgeRect.height / 3;
+      bridgeRenderOffsetX = Math.max(0, (bridgeRect.width - bridgeRenderCellWidth * boardWidth) / 2);
+      bridgeRenderOffsetY = 0;
     });
     drawTetris();
     drawBridge();
@@ -455,14 +457,15 @@ const services = [
         y += 1;
       }
     }
+    impactCells = [];
     spawnPiece();
   };
 
-  const drawBlockOn = (context: CanvasRenderingContext2D, x: number, y: number, color: string, offsetY = 0, blockRowHeight = renderRowHeight) => {
-    const px = renderOffsetX + x * renderCellWidth;
-    const py = y * blockRowHeight + offsetY;
+  const drawBlockOn = (context: CanvasRenderingContext2D, x: number, y: number, color: string, offsetY = 0, blockRowHeight = renderRowHeight, blockCellWidth = renderCellWidth, offsetX = renderOffsetX, baseOffsetY = renderOffsetY) => {
+    const px = offsetX + x * blockCellWidth;
+    const py = baseOffsetY + y * blockRowHeight + offsetY;
     context.fillStyle = color;
-    context.fillRect(px, py, renderCellWidth, blockRowHeight);
+    context.fillRect(px, py, blockCellWidth, blockRowHeight);
   };
 
   const drawBlock = (x: number, y: number, color: string, offsetY = 0) => {
@@ -473,11 +476,13 @@ const services = [
   const drawTetris = () => {
     if (!tetrisContext || !tetrisCanvas) return;
     tetrisContext.clearRect(0, 0, tetrisCanvas.width, tetrisCanvas.height);
+    const occupiedRows = board.flatMap((row, y) => row.some(Boolean) ? y : []);
+    const boardOffset = occupiedRows.length ? Math.max(0, boardHeight - 1 - Math.max(...occupiedRows)) : 0;
     board.forEach((row, y) => row.forEach((color, x) => {
       if (!color) return;
       const impacted = impactCells.some(([impactX, impactY]) => impactX === x && impactY === y);
       const bounce = impacted && impactTime > 0 ? -Math.sin((impactTime / 0.18) * Math.PI) * 3 : 0;
-      drawBlock(x, y, color, bounce);
+      drawBlock(x, y + boardOffset, color, bounce);
     }));
     activePiece.cells.forEach(([dx, dy]) => {
       if (activeY + dy >= 0) drawBlock(activeX + dx, activeY + dy, activePiece.color);
@@ -489,7 +494,7 @@ const services = [
       const canvas = bridgeCanvases[index];
       if (!context || !canvas) return;
       context.clearRect(0, 0, canvas.width, canvas.height);
-      bridgeRows.forEach((row, y) => row.forEach((color, x) => color && drawBlockOn(context, x, Math.max(0, 3 - bridgeRows.length + y), color, bridgeOffset, bridgeRenderRowHeight)));
+      bridgeRows.forEach((row, y) => row.forEach((color, x) => color && drawBlockOn(context, x, Math.max(0, 3 - bridgeRows.length + y), color, bridgeOffset, bridgeRenderRowHeight, bridgeRenderCellWidth, bridgeRenderOffsetX, bridgeRenderOffsetY)));
     });
   };
 
