@@ -113,6 +113,18 @@
 .service-tetris-art-03 span:nth-child(11),
 .service-tetris-art-03 span:nth-child(12) { background: #3E8EF7; }
 
+@media (max-width: 639px) {
+  [data-service-card] > [aria-hidden="true"] {
+    width: 65%;
+  }
+
+  .service-tetris-art {
+    inset: 50% 6% auto 6%;
+    height: 64px;
+    transform: translateY(-50%);
+  }
+}
+
 .pymes-tetris-art {
   position: absolute;
   right: 0;
@@ -198,6 +210,10 @@ body {
 .section-rail__link:hover .section-rail__line,
 .section-rail__link:focus-visible .section-rail__line {
   transform: scaleY(1.5);
+}
+
+@media (max-width: 639px) {
+  .section-rail { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
