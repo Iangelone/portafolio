@@ -90,4 +90,4 @@ npm run vp:build
 
 ## Contacto
 
-Si estás construyendo algo y necesitás una mano para llevarlo a producción, podés escribirme por [WhatsApp](https://wa.me/5491178174733?text=Hola%20Ignacio%2C%20vengo%20de%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto.) o visitar mi [LinkedIn](https://www.linkedin.com/in/ignacioangelone/).
+Si estás construyendo algo y necesitás una mano para llevarlo a producción, podés escribirme por [WhatsApp](https://wa.me/5491122867368?text=Hola%20Ignacio%2C%20vengo%20de%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto.) o visitar mi [LinkedIn](https://www.linkedin.com/in/ignacioangelone/).
